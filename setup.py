@@ -2,6 +2,11 @@
 import io
 import re
 from setuptools import setup, find_packages
+import sys
+
+
+if sys.version_info[:3] < (3, 4):
+    raise SystemExit("Toga requires Python 3.4+.")
 
 
 with io.open('./toga_winrt/__init__.py', encoding='utf8') as version_file:
@@ -31,12 +36,10 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         # 'Operating System :: Microsoft :: Windows :: Windows 8',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3 :: Only',
         'Topic :: Software Development',
         'Topic :: Software Development :: User Interfaces',
         'Topic :: Software Development :: Widget Sets',
